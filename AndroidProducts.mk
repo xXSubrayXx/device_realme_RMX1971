@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/fluid_rmx1971.mk
+    $(LOCAL_DIR)/fluid_RMX1971.mk
 
 COMMON_LUNCH_CHOICES := \
-    fluid_rmx1971-user \
-    fluid_rmx1971-userdebug \
-    fluid_rmx1971-eng
+    fluid_RMX1971-user \
+    fluid_RMX1971-userdebug \
+    fluid_RMX1971-eng
