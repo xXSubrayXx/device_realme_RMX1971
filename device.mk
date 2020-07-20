@@ -376,6 +376,10 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_RMX1971
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
