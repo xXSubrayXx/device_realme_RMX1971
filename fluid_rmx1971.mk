@@ -18,11 +18,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from ysl device
-$(call inherit-product, device/xiaomi/ysl/device.mk)
+# Inherit from RMX1971 device
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common fluid stuff.
 $(call inherit-product, vendor/fluid/config/common_full_phone.mk)
+
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # flags for fluid gapps variant
 TARGET_INCLUDE_GAPPS := true
@@ -30,18 +33,20 @@ TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := ysl
-PRODUCT_NAME := fluid_ysl
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi S2
-PRODUCT_MANUFACTURER := Xiaomi
-TARGET_VENDOR := Xiaomi
-BOARD_VENDOR := Xiaomi
+PRODUCT_DEVICE := RMX1971
+PRODUCT_NAME := fluid_RMX1971
+PRODUCT_BRAND := Realme
+PRODUCT_MODEL := Realme 5 Pro
+PRODUCT_MANUFACTURER := Realme
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="ysl-user 9 PKQ1.181203.001 V11.0.3.0.PEFMIXM release-keys"
+    PRIVATE_BUILD_DESC="sdm710-user 9 PKQ1.190101.001 eng.root.20190823.002138 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys"
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="RMX1971" \
+    TARGET_DEVICE="RMX1971"
