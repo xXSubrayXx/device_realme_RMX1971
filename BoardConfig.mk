@@ -43,7 +43,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/realme/RMX1971
-#TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := $(shell sh -c "find prebuilts/clang/host/linux-x86/ -type f -name clang -printf \"%T@ %Tc %p\n\" | sort -n | tail -n1 | sed 's/.*clang-\(.*\)\/bin.*/\1/'")
 
 # Platform
 TARGET_BOARD_PLATFORM := sdm710
@@ -148,6 +149,10 @@ BOARD_USES_QCOM_HARDWARE := true
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
@@ -180,6 +185,10 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
+
+# Vendor init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_raphael
+TARGET_RECOVERY_DEVICE_MODULES := libinit_raphael
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn

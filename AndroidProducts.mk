@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The fluidOS Project
+# Copyright (C) 2020 The PixysOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/fluid_RMX1971.mk
+    $(LOCAL_DIR)/pixys_RMX1971.mk
 
 COMMON_LUNCH_CHOICES := \
-    fluid_RMX1971-user \
-    fluid_RMX1971-userdebug \
-    fluid_RMX1971-eng
+    pixys_RMX1971-user \
+    pixys_RMX1971-userdebug \
+    pixys_RMX1971-eng
