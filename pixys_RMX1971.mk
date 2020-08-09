@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The fluidOS Project
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,32 +21,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from RMX1971 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common fluid stuff.
-$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
-
-# Bootanimation
+# Inherit some common PixysOS stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
-
-# flags for fluid gapps variant
 TARGET_INCLUDE_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+$(call inherit-product, vendor/pixys/config/common_full_phone.mk)
 
-# Device identifier. This must come after all inclusions
+# Device identifier. This must come after all inclusions.
+PRODUCT_NAME := pixys_RMX1971
 PRODUCT_DEVICE := RMX1971
-PRODUCT_NAME := fluid_RMX1971
 PRODUCT_BRAND := Realme
 PRODUCT_MODEL := Realme 5 Pro
-PRODUCT_MANUFACTURER := Realme
-
-PRODUCT_GMS_CLIENTID_BASE := android-realme
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys"
-
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys"
+PRODUCT_MANUFACTURER := realme
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="RMX1971" \
     TARGET_DEVICE="RMX1971"
+
+PRODUCT_GMS_CLIENTID_BASE := android-oppo
