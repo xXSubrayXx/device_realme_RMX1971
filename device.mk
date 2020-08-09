@@ -220,6 +220,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator@1.0-service \
     libgui_vendor
 
+# Doze
+PRODUCT_PACKAGES += \
+    RealmeParts \
+    devicesettings
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
