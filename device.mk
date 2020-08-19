@@ -29,9 +29,6 @@ $(call inherit-product-if-exists, vendor/realme/RMX1971/RMX1971-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Properties
--include $(LOCAL_PATH)/vendor_props.mk
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
