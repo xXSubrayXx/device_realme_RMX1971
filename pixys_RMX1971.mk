@@ -23,11 +23,8 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common PixysOS stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-IS_PHONE := true
+
 $(call inherit-product, vendor/pixys/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
